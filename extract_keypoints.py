@@ -77,7 +77,7 @@ for filename in tqdm(os.listdir(video_dir)):
     duration = min(n_frames / fps, 3.0)
 
     target_fps = 15
-    target_frames = int(target_fps * duration)
+    target_frames = 32
 
     if target_frames <= 0:
         cap.release()
@@ -85,7 +85,7 @@ for filename in tqdm(os.listdir(video_dir)):
 
     indices = np.linspace(
         0,
-        duration * fps - 1,
+        n_frames - 1,
         target_frames
     ).astype(int)
 
